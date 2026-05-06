@@ -10,9 +10,9 @@ export function PageShell({ title, description, children, className }: PageShell
             )}
         >
             <header className='mb-8 border-b border-slate-100 pb-6'>
-                {/* <h1 className='font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl'>
+                <h1 className='font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl'>
                     {title}
-                </h1> */}
+                </h1>
                 {description ? (
                     <p className='mt-3 max-w-3xl text-base leading-relaxed text-slate-600'>{description}</p>
                 ) : null}

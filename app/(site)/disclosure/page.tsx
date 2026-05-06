@@ -1,3 +1,6 @@
+import { redirect } from 'next/navigation';
+
+/*
 import type { Metadata } from 'next';
 
 import { Disclosure as DisclosureView } from '@/views/disclosure';
@@ -8,4 +11,9 @@ export const metadata: Metadata = {
 
 export default function DisclosurePage() {
     return <DisclosureView />;
+}
+*/
+
+export default function DisclosurePage() {
+    redirect('/');
 }
