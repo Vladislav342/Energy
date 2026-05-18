@@ -1,39 +1,69 @@
 import type { ReactNode } from 'react';
 
 import { cn } from '@/shared/lib';
+import { SITE_GALLERY } from '@/shared/config';
 import { COMPANY_NAME, REGULATOR_NAME } from '@/shared/constants';
 import { Home } from '@/views/home';
 
-import { LandingSectionDecor, landingSectionSurface } from '../landing-section-surface';
+import type { LandingSectionTone } from '../landing-section-surface';
+import { getLandingSectionTheme, landingSectionPadding } from '../landing-section-surface';
 import { LandingHero } from './landing-hero';
+import { LandingSectionPhoto } from './landing-section-photo';
 
 function LandingSection({
     id,
     title,
+    tone,
     description,
+    image,
     children,
 }: {
     id: string;
     title: string;
+    tone: LandingSectionTone;
     description?: ReactNode;
+    image?: { src: string; alt: string };
     children: ReactNode;
 }) {
+    const theme = getLandingSectionTheme(tone);
+
     return (
         <section id={id} className='scroll-mt-28'>
-            <article className={cn(landingSectionSurface)}>
-                <LandingSectionDecor />
-                <header className='relative z-[1] mb-8 border-b border-slate-100/90 pb-6 md:mb-9 md:pb-7'>
-                    <h2 className='font-serif text-2xl font-semibold tracking-tight text-slate-900 md:text-[1.75rem] lg:text-3xl'>
-                        {title}
-                    </h2>
-                    {description ? (
-                        <div className='mt-3 max-w-3xl text-base leading-relaxed text-slate-600 md:text-[1.0625rem]'>
-                            {description}
-                        </div>
-                    ) : null}
-                </header>
-                <div className='relative z-[1] space-y-6 text-slate-700 [&_h3]:mt-8 [&_h3]:font-serif [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-900 [&_h3]:first:mt-0 [&_li]:text-slate-700 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5'>
-                    {children}
+            <article className={cn(theme.article)}>
+                <div className={theme.stripe} aria-hidden />
+                <div className={cn(landingSectionPadding, theme.body)}>
+                    <header
+                        className={cn(
+                            '-mx-6 -mt-8 mb-8 px-6 pb-6 pt-7 md:-mx-10 md:-mt-10 md:mb-9 md:px-10 md:pb-7 md:pt-8 lg:-mx-11 lg:-mt-11 lg:px-11',
+                            theme.header,
+                        )}
+                    >
+                        <h2
+                            className={cn(
+                                'border-l-4 pl-4 font-serif text-2xl font-semibold tracking-tight text-slate-900 md:text-[1.75rem] lg:text-3xl',
+                                theme.titleAccent,
+                            )}
+                        >
+                            {title}
+                        </h2>
+                        {description ? (
+                            <div className='mt-4 max-w-3xl pl-4 text-base leading-relaxed text-slate-600 md:text-[1.0625rem]'>
+                                {description}
+                            </div>
+                        ) : null}
+                    </header>
+                    <div className='space-y-6 text-slate-700 [&_h3]:mt-8 [&_h3]:font-serif [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-900 [&_h3]:first:mt-0 [&_li]:text-slate-700 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5'>
+                        {image ? (
+                            <LandingSectionPhoto
+                                src={image.src}
+                                alt={image.alt}
+                                tone={tone}
+                                variant='banner'
+                                className='!mt-0'
+                            />
+                        ) : null}
+                        {children}
+                    </div>
                 </div>
             </article>
         </section>
@@ -85,7 +115,12 @@ export function LandingPage() {
 
                 <LandingSection
                     id='about'
+                    tone='about'
                     title='Про компанію'
+                    image={{
+                        src: SITE_GALLERY.about,
+                        alt: 'Загальний вигляд енергетичних об’єктів товариства',
+                    }}
                     description={
                         <>
                             <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> є енергетичною компанією,
@@ -109,7 +144,12 @@ export function LandingPage() {
 
                 <LandingSection
                     id='license'
+                    tone='license'
                     title='Ліцензія та регулювання'
+                    image={{
+                        src: SITE_GALLERY.license,
+                        alt: 'Документи та регулювання діяльності з виробництва електроенергії',
+                    }}
                     description={
                         <>
                             <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> здійснює діяльність з
@@ -138,6 +178,7 @@ export function LandingPage() {
 
             <LandingSection
                 id='capacity'
+                tone='capacity'
                 title='Генеруючі потужності'
                 description='Структура генеруючих активів та ключові технічні параметри.'
             >
@@ -156,6 +197,13 @@ export function LandingPage() {
                             </span>
                             Сонячна електростанція (СЕС)
                         </h3>
+                        <LandingSectionPhoto
+                            src={SITE_GALLERY.capacitySolar}
+                            alt='Сонячна електростанція — обладнання та майданчик'
+                            tone='capacity'
+                            variant='card'
+                            className='relative mt-5'
+                        />
                         <dl className='relative mt-6 grid gap-3 sm:grid-cols-2'>
                             <div className='rounded-xl border border-amber-100/85 bg-white/95 p-4 shadow-sm shadow-amber-900/5'>
                                 <dt className='text-xs font-semibold uppercase tracking-wide text-amber-900/80'>
@@ -200,6 +248,13 @@ export function LandingPage() {
                             </span>
                             Когенераційна установка (КГУ)
                         </h3>
+                        <LandingSectionPhoto
+                            src={SITE_GALLERY.capacityCogeneration}
+                            alt='Когенераційна установка — технічний комплекс'
+                            tone='capacity'
+                            variant='card'
+                            className='relative mt-5'
+                        />
                         <p className='mt-5 text-slate-700'>
                             До складу когенераційного комплексу{' '}
                             <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> входять установки типу
@@ -226,7 +281,12 @@ export function LandingPage() {
 
             <LandingSection
                 id='production'
+                tone='production'
                 title='Виробничі показники'
+                image={{
+                    src: SITE_GALLERY.production,
+                    alt: 'Виробничі процеси та облік електроенергії',
+                }}
                 description={
                     <>
                         <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> здійснює регулярний облік та
@@ -249,7 +309,12 @@ export function LandingPage() {
 
             <LandingSection
                 id='environment'
+                tone='environment'
                 title='Екологічна інформація'
+                image={{
+                    src: SITE_GALLERY.environment,
+                    alt: 'Екологічні аспекти та об’єкти генерації',
+                }}
                 description={
                     <>
                         Діяльність <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> здійснюється з
@@ -280,7 +345,12 @@ export function LandingPage() {
 
             <LandingSection
                 id='disclosure'
+                tone='disclosure'
                 title='Розкриття інформації'
+                image={{
+                    src: SITE_GALLERY.disclosure,
+                    alt: 'Прозорість та розкриття інформації товариства',
+                }}
                 description={
                     <>
                         <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> забезпечує відкритість та
@@ -304,7 +374,12 @@ export function LandingPage() {
 
             <LandingSection
                 id='financial'
+                tone='financial'
                 title='Фінансова звітність'
+                image={{
+                    src: SITE_GALLERY.financial,
+                    alt: 'Фінансова звітність та облік діяльності',
+                }}
                 description={
                     <>
                         Фінансова звітність <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span>{' '}
@@ -321,6 +396,7 @@ export function LandingPage() {
 
             <LandingSection
                 id='contacts'
+                tone='contacts'
                 title='Контакти'
                 description='Для отримання додаткової інформації просимо звертатися за вказаними контактами.'
             >

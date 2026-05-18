@@ -1,9 +1,7 @@
 import Image from 'next/image';
 
+import { SITE_GALLERY } from '@/shared/config';
 import { COMPANY_NAME } from '@/shared/constants';
-
-/** Покладіть файл у `public/IMG_4817.png`. */
-const HERO_IMAGE_SRC = '/IMG_4817.png';
 
 export function LandingHero() {
     return (
@@ -13,7 +11,7 @@ export function LandingHero() {
             aria-label='Головний банер'
         >
             <Image
-                src={HERO_IMAGE_SRC}
+                src={SITE_GALLERY.hero}
                 alt=''
                 fill
                 priority
@@ -39,10 +37,10 @@ export function LandingHero() {
                     className='mx-auto mt-6 h-1 w-14 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-cyan-500 shadow-[0_0_24px_rgba(34,211,238,0.45)]'
                     aria-hidden
                 />
-                <p className='mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/92 md:text-lg md:leading-relaxed'>
+                {/* <p className='mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/92 md:text-lg md:leading-relaxed'>
                     Товариство здійснює діяльність з виробництва електричної енергії відповідно до вимог чинного
                     законодавства України.
-                </p>
+                </p> */}
             </div>
             <div className='pointer-events-none absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 sm:block' aria-hidden>
                 <div className='flex h-10 w-7 justify-center rounded-full border-2 border-white/50 pt-2'>

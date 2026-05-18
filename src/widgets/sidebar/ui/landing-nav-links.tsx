@@ -45,20 +45,20 @@ export function LandingNavLinks({ variant, onNavigate, className }: LandingNavLi
         'active:scale-[0.98]';
 
     const drawerLink =
-        'inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_10px_22px_-16px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/55 transition-all duration-200 motion-reduce:transition-none ' +
-        'bg-gradient-to-b from-white to-slate-50/95 hover:from-cyan-50/85 hover:to-white hover:text-slate-900 hover:shadow-[0_14px_28px_-14px_rgba(34,211,238,0.35)] hover:ring-cyan-300/45 active:scale-[0.97]';
+        'flex w-full items-center rounded-lg px-3 py-3 text-[15px] font-medium leading-snug text-slate-800 transition-colors duration-200 ' +
+        'hover:bg-slate-100 active:bg-slate-200/80';
 
     return (
         <ul
             className={cn(
                 variant === 'bar'
                     ? 'flex min-w-0 max-w-full flex-wrap items-center justify-center gap-x-0.5 gap-y-1 py-0.5 sm:gap-x-1 sm:gap-y-1.5 lg:gap-x-1.5 lg:gap-y-2'
-                    : 'flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-2.5 pt-0.5 pb-0.5',
+                    : 'flex w-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white divide-y divide-slate-200',
                 className,
             )}
         >
             {MAIN_NAV.map((item) => (
-                <li key={item.href} className='shrink-0'>
+                <li key={item.href} className={variant === 'drawer' ? 'w-full' : 'shrink-0'}>
                     <Link
                         href={item.href}
                         scroll={false}

@@ -33,10 +33,8 @@ export function AppShell({ children }: AppShellProps) {
 
             <aside
                 className={cn(
-                    'fixed left-0 top-0 z-50 max-h-[92dvh] w-[min(26rem,94vw)] transform overflow-x-hidden overflow-y-auto overscroll-contain rounded-br-[1.75rem] border-y border-r border-slate-200/60 bg-gradient-to-b from-white via-white to-slate-50/90 shadow-[16px_0_48px_-20px_rgba(15,23,42,0.35)] ring-1 ring-white/55 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden',
-                    open
-                        ? 'translate-x-0 shadow-[22px_0_60px_-24px_rgba(15,23,42,0.48)]'
-                        : '-translate-x-full',
+                    'fixed inset-y-0 left-0 z-50 flex w-[min(20rem,88vw)] flex-col border-r border-slate-300 bg-white pl-1 shadow-[14px_0_48px_-16px_rgba(15,23,42,0.32)] before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-1 before:bg-gradient-to-b before:from-cyan-600 before:via-sky-600 before:to-cyan-700 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden',
+                    open ? 'translate-x-0' : '-translate-x-full',
                 )}
                 aria-hidden={!open}
                 role='dialog'
@@ -56,7 +54,7 @@ export function AppShell({ children }: AppShellProps) {
                             onClick={(e) => smoothToHero('/#hero', e)}
                         >
                             <Image
-                                src='/logo-without-back.png'
+                                src='/hi-1024white.png'
                                 alt={COMPANY_NAME}
                                 width={280}
                                 height={280}
