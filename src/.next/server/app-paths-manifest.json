@@ -1,0 +1,13 @@
+{
+  "/(site)/about/page": "app/(site)/about/page.js",
+  "/(site)/capacity/page": "app/(site)/capacity/page.js",
+  "/(site)/contacts/page": "app/(site)/contacts/page.js",
+  "/(site)/disclosure/page": "app/(site)/disclosure/page.js",
+  "/(site)/environment/page": "app/(site)/environment/page.js",
+  "/(site)/financial/page": "app/(site)/financial/page.js",
+  "/(site)/license/page": "app/(site)/license/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/production/page": "app/(site)/production/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}

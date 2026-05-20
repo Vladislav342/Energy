@@ -1,6 +1,6 @@
 'use client';
 
-import type { MouseEvent } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback } from 'react';
@@ -30,6 +30,23 @@ export function useSmoothLandingNav(onDone?: () => void) {
     );
 }
 
+type LandingAnchorLinkProps = {
+    href: string;
+    className?: string;
+    children: ReactNode;
+};
+
+/** Якорне посилання з плавним скролом на головній (як у навігації). */
+export function LandingAnchorLink({ href, className, children }: LandingAnchorLinkProps) {
+    const smoothGo = useSmoothLandingNav();
+
+    return (
+        <Link href={href} scroll={false} onClick={(e) => smoothGo(href, e)} className={className}>
+            {children}
+        </Link>
+    );
+}
+
 type LandingNavLinksProps = {
     variant: 'bar' | 'drawer';
     onNavigate?: () => void;
@@ -40,20 +57,19 @@ export function LandingNavLinks({ variant, onNavigate, className }: LandingNavLi
     const smoothGo = useSmoothLandingNav(onNavigate);
 
     const barLink =
-        'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[12px] font-medium text-slate-600 transition-all duration-200 sm:px-3 sm:text-[13px] lg:py-2 xl:px-3.5 xl:text-sm ' +
-        'hover:bg-gradient-to-b hover:from-white hover:to-slate-100 hover:text-slate-900 hover:shadow-md hover:shadow-slate-200/70 hover:ring-1 hover:ring-slate-200/80 ' +
-        'active:scale-[0.98]';
+        'whitespace-nowrap px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/85 transition-colors duration-200 ' +
+        'hover:text-[var(--accent)] sm:text-xs';
 
     const drawerLink =
-        'flex w-full items-center rounded-lg px-3 py-3 text-[15px] font-medium leading-snug text-slate-800 transition-colors duration-200 ' +
-        'hover:bg-slate-100 active:bg-slate-200/80';
+        'flex w-full items-center px-4 py-3.5 text-[15px] font-medium leading-snug text-slate-200 transition-colors duration-200 ' +
+        'hover:bg-white/5 hover:text-white active:bg-white/10';
 
     return (
         <ul
             className={cn(
                 variant === 'bar'
-                    ? 'flex min-w-0 max-w-full flex-wrap items-center justify-center gap-x-0.5 gap-y-1 py-0.5 sm:gap-x-1 sm:gap-y-1.5 lg:gap-x-1.5 lg:gap-y-2'
-                    : 'flex w-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white divide-y divide-slate-200',
+                    ? 'flex min-w-0 max-w-full flex-wrap items-center justify-center gap-x-1 gap-y-1 lg:gap-x-2'
+                    : 'flex w-full flex-col divide-y divide-slate-700',
                 className,
             )}
         >

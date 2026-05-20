@@ -1,0 +1,13 @@
+{
+  "/(site)/about/page": "/about",
+  "/(site)/capacity/page": "/capacity",
+  "/(site)/contacts/page": "/contacts",
+  "/(site)/disclosure/page": "/disclosure",
+  "/(site)/environment/page": "/environment",
+  "/(site)/financial/page": "/financial",
+  "/(site)/license/page": "/license",
+  "/(site)/page": "/",
+  "/(site)/production/page": "/production",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico"
+}

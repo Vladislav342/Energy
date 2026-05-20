@@ -1,0 +1,13 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/app/(site)/disclosure/page": [
+      "static/media/d3fe2f289711ac3f-s.p.50575af1.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/256e1f7f180674ba-s.p.afa27594.woff2",
+      "static/media/68d403cf9f2c68c5-s.p.f9f15f61.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}
