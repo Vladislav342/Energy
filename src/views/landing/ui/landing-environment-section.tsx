@@ -48,7 +48,7 @@ const EMISSION_METRICS = [
 
 export function LandingEnvironmentSection() {
     return (
-        <section id='environment' className='relative scroll-mt-28 overflow-hidden border-y border-zinc-200/80 bg-white'>
+        <section id='environment' className='relative scroll-mt-28 overflow-hidden border-y border-slate-200/80 bg-white'>
             <div
                 className='pointer-events-none absolute -right-24 top-0 h-[28rem] w-[28rem] rounded-full bg-[var(--accent-muted)] blur-3xl'
                 aria-hidden
@@ -70,10 +70,10 @@ export function LandingEnvironmentSection() {
                     </p>
                 </header>
 
-                {/* <div className='mt-10 border-t border-zinc-200 pt-10 md:pt-12' /> */}
+                {/* <div className='mt-10 border-t border-slate-200 pt-10 md:pt-12' /> */}
 
                 <div className='mt-10 grid gap-5 lg:grid-cols-12 lg:gap-6'>
-                    <article className='border border-zinc-200 border-l-[3px] border-l-[var(--accent)] bg-gradient-to-br from-white to-zinc-50/90 p-7 sm:p-8 lg:col-span-7'>
+                    <article className='border border-slate-200 border-l-[3px] border-l-[var(--accent)] bg-gradient-to-br from-white to-zinc-50/90 p-7 sm:p-8 lg:col-span-7'>
                         <span className='text-[var(--accent)]'>
                             <IconSun />
                         </span>
@@ -93,7 +93,7 @@ export function LandingEnvironmentSection() {
                             className='pointer-events-none absolute inset-0 translate-x-3 translate-y-3 bg-[var(--accent)]'
                             aria-hidden
                         />
-                        <div className='relative h-full min-h-[16rem] overflow-hidden border border-zinc-200 lg:absolute lg:inset-0 lg:min-h-0'>
+                        <div className='relative h-full min-h-[16rem] overflow-hidden border border-slate-200 lg:absolute lg:inset-0 lg:min-h-0'>
                             <Image
                                 src={SITE_GALLERY.environment}
                                 alt='Екологічні аспекти та об’єкти генерації'
@@ -104,7 +104,7 @@ export function LandingEnvironmentSection() {
                         </div>
                     </figure>
 
-                    <article className='border border-zinc-200 border-l-[3px] border-l-[var(--accent)] bg-white p-7 sm:p-8 lg:col-span-7'>
+                    <article className='border border-slate-200 border-l-[3px] border-l-[var(--accent)] bg-white p-7 sm:p-8 lg:col-span-7'>
                         <span className='text-[var(--accent)]'>
                             <IconCogen />
                         </span>

@@ -21,7 +21,7 @@ const FINANCIAL_STEPS = [
 
 export function LandingFinancialSection() {
     return (
-        <section id='financial' className='relative scroll-mt-28 overflow-hidden border-y border-zinc-200/60 bg-zinc-50'>
+        <section id='financial' className='relative scroll-mt-28 overflow-hidden border-y border-slate-200/60 bg-zinc-50'>
             <div
                 className='pointer-events-none absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[var(--accent-muted)] blur-3xl'
                 aria-hidden
@@ -43,7 +43,7 @@ export function LandingFinancialSection() {
                             {FINANCIAL_STEPS.map((step) => (
                                 <article
                                     key={step.label}
-                                    className='border border-zinc-200 bg-white p-5 transition-shadow hover:shadow-sm'
+                                    className='border border-slate-200 bg-white p-5 transition-shadow hover:shadow-sm'
                                 >
                                     <p className='font-serif text-2xl font-semibold leading-none text-[var(--accent)]'>
                                         {step.label}
@@ -64,7 +64,7 @@ export function LandingFinancialSection() {
                             className='pointer-events-none absolute inset-0 translate-x-3 translate-y-3 bg-[var(--accent)]'
                             aria-hidden
                         />
-                        <div className='relative aspect-[4/3] overflow-hidden border border-zinc-200 bg-white sm:aspect-[5/4]'>
+                        <div className='relative aspect-[4/3] overflow-hidden border border-slate-200 bg-white sm:aspect-[5/4]'>
                             <Image
                                 src={SITE_GALLERY.financial}
                                 alt='Фінансова звітність та облік діяльності'

@@ -46,3 +46,5 @@ export function MainSidebar({ onNavigate }: MainSidebarProps) {
         </div>
     );
 }
+
+//border-slate-100

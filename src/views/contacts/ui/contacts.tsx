@@ -55,7 +55,7 @@ export function Contacts() {
                 <div className='relative rounded-[1.35rem] bg-white/85 p-6 backdrop-blur-sm md:p-8'>
                     <div className='relative overflow-hidden rounded-2xl border border-slate-200/60 bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950 px-6 py-5 text-white shadow-inner shadow-black/20'>
                         <div
-                            className='pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-amber-300 via-cyan-400 to-cyan-600'
+                            className='pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600'
                             aria-hidden
                         />
                         <p className='pl-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-200/90'>

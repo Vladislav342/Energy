@@ -5,7 +5,7 @@ export function PageShell({ title, description, children, className }: PageShell
     return (
         <article
             className={cn(
-                'rounded-2xl border border-slate-200/80 bg-white/90 p-8 shadow-sm shadow-slate-200/40 backdrop-blur-sm md:p-10',
+                'rounded-2xl border border-blue-200/80 bg-white/90 p-8 shadow-sm shadow-blue-200/40 backdrop-blur-sm md:p-10',
                 className,
             )}
         >

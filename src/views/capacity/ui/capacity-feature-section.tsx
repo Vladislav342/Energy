@@ -30,7 +30,7 @@ export function CapacitySesContent() {
                     Сонячна електростанція <span className='font-semibold text-slate-900'>{COMPANY_NAME}</span> здійснює
                     виробництво електричної енергії шляхом перетворення сонячного випромінювання у електричну енергію.
                 </p>
-                <p className='border border-zinc-200 bg-zinc-50 px-4 py-3.5 text-sm leading-relaxed text-slate-600'>
+                <p className='border border-slate-200 bg-zinc-50 px-4 py-3.5 text-sm leading-relaxed text-slate-600'>
                     Об’єкт відповідає технічним та екологічним вимогам.
                 </p>
             </div>
@@ -40,7 +40,7 @@ export function CapacitySesContent() {
 
 function UnitStat({ count, power }: { count: string; power: string }) {
     return (
-        <li className='border border-zinc-200 bg-zinc-50 px-4 py-5 text-center'>
+        <li className='border border-slate-200 bg-zinc-50 px-4 py-5 text-center'>
             <p className='font-serif text-3xl font-semibold leading-none text-[var(--accent)]'>{count}</p>
             <p className='mt-2 text-sm font-medium text-slate-800'>{power}</p>
         </li>

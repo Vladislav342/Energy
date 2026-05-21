@@ -36,7 +36,7 @@ export function LandingSectionPhoto({
             <div
                 className={cn(
                     'relative overflow-hidden border bg-slate-900',
-                    dark ? 'border-[var(--dark-border)]' : 'border-zinc-200',
+                    dark ? 'border-[var(--dark-border)]' : 'border-slate-200',
                 )}
             >
                 <div className={cn('relative w-full', aspect)}>

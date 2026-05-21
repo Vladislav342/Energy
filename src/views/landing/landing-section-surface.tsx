@@ -34,8 +34,8 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     about: {
         mode: 'light',
         section: 'bg-white',
-        article: 'relative overflow-hidden border-y border-zinc-200/80 bg-white',
-        header: 'mb-8 border-b border-zinc-200 pb-8 md:mb-10',
+        article: 'relative overflow-hidden border-y border-slate-200/80 bg-white',
+        header: 'mb-8 border-b border-slate-200 pb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
         body: '',
@@ -44,7 +44,7 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     license: {
         mode: 'light',
         section: 'bg-zinc-50',
-        article: 'relative overflow-hidden border-y border-zinc-200/60',
+        article: 'relative overflow-hidden border-y border-slate-200/60',
         header: 'mb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
@@ -54,7 +54,7 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     capacity: {
         mode: 'light',
         section: 'bg-white',
-        article: 'relative overflow-hidden border-y border-zinc-200/80',
+        article: 'relative overflow-hidden border-y border-slate-200/80',
         header: 'mb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
@@ -74,7 +74,7 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     environment: {
         mode: 'light',
         section: 'bg-zinc-50',
-        article: 'relative overflow-hidden border-y border-zinc-200/60',
+        article: 'relative overflow-hidden border-y border-slate-200/60',
         header: 'mb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
@@ -84,7 +84,7 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     disclosure: {
         mode: 'light',
         section: 'bg-white',
-        article: 'relative overflow-hidden border-y border-zinc-200/80',
+        article: 'relative overflow-hidden border-y border-slate-200/80',
         header: 'mb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
@@ -94,7 +94,7 @@ export const landingSectionThemes: Record<LandingSectionTone, SectionTheme> = {
     financial: {
         mode: 'light',
         section: 'bg-zinc-50',
-        article: 'relative overflow-hidden border-y border-zinc-200/60',
+        article: 'relative overflow-hidden border-y border-slate-200/60',
         header: 'mb-8 md:mb-10',
         title: 'font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl',
         description: 'mt-4 max-w-2xl text-base leading-relaxed text-slate-600',
